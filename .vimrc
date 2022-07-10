@@ -13,12 +13,14 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula'}
 
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
 " Initialize plugin system
 call plug#end()
+
+colorscheme dracula
 
 inoremap jj <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
@@ -74,7 +76,6 @@ set expandtab
 set bg=dark
 set encoding=UTF-8
 
-colorscheme gruvbox
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
