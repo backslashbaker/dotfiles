@@ -1,7 +1,6 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'christoomey/vim-tmux-navigator'
