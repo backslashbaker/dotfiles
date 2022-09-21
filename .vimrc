@@ -7,6 +7,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'dracula/vim', { 'as': 'dracula'}
 
+Plug 'preservim/nerdtree'
+
 
 " Initialize plugin system
 call plug#end()
@@ -14,6 +16,12 @@ call plug#end()
 colorscheme dracula
 
 inoremap jj <ESC>
+
+" nerdtree remapping
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 
 set relativenumber
