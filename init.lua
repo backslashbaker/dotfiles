@@ -1,7 +1,7 @@
 --[[
 
 =====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
+=================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
 
 Kickstart.nvim is *not* a distribution.
@@ -133,7 +133,7 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
+    -- catpuccin theme
     "catppuccin/nvim",
     as = "catppuccin",
     priority = 1000,
@@ -262,6 +262,9 @@ require('lazy').setup({
     config = function()
       require("copilot_cmp").setup()
     end
+  },
+  {
+    'ThePrimeagen/vim-be-good',
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
