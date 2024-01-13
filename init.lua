@@ -247,6 +247,12 @@ require('lazy').setup({
       })
     end,
   },
+
+  --- Copliot chat
+  {
+    'gptlang/CopilotChat.nvim',
+  },
+
   {
     "zbirenbaum/copilot-cmp",
     config = function()
