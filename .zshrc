@@ -78,9 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+	git
+	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,20 +109,40 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval $(thefuck --alias)
-eval $(thefuck --alias FUCK)
-export PATH="/usr/local/bin:$PATH"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+eval $(thefuck --alias)
 
 alias ls='exa'
 alias ll='exa -alh'
 alias tree='exa --tree'
 
-alias cat='batcat'
+alias cat='bat'
+
+
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+
+#------------------------------------------------------------------------------
+# ALIAS DATAHUB
+#------------------------------------------------------------------------------
+alias rmc='docker stop $(docker ps -a -q) && docker rm $(docker ps -aq) && docker ps -a'
+alias rmi='docker rmi -f $(docker images -q) --force && docker images'
+alias nrd="npm run develop"
+alias dev="cp .envs/dev.env .env && print env updated: dev"
+alias docker-env="cp .envs/docker.env .env && print env updated: docker"
+alias sandbox="cp .envs/sandbox.env .env && print env updated: sandbox"
+alias lint="npm run lint:js:fix"
+alias functional="npm run test:functional:watch" 
+alias unit="npm run test:unit"
