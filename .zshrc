@@ -122,10 +122,6 @@ alias tree='exa --tree'
 
 alias cat='bat'
 
-
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -134,15 +130,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 
-#------------------------------------------------------------------------------
-# ALIAS DATAHUB
-#------------------------------------------------------------------------------
-alias rmc='docker stop $(docker ps -a -q) && docker rm $(docker ps -aq) && docker ps -a'
-alias rmi='docker rmi -f $(docker images -q) --force && docker images'
-alias nrd="npm run develop"
-alias dev="cp .envs/dev.env .env && print env updated: dev"
-alias docker-env="cp .envs/docker.env .env && print env updated: docker"
-alias sandbox="cp .envs/sandbox.env .env && print env updated: sandbox"
-alias lint="npm run lint:js:fix"
-alias functional="npm run test:functional:watch" 
-alias unit="npm run test:unit"
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
