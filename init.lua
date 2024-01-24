@@ -259,6 +259,7 @@ require('lazy').setup({
       require("copilot_cmp").setup()
     end
   },
+  --- Vim tutor game
   {
     'ThePrimeagen/vim-be-good',
   },
