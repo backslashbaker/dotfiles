@@ -263,6 +263,7 @@ require('lazy').setup({
   {
     'ThePrimeagen/vim-be-good',
   },
+  --- noice command window
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -277,6 +278,17 @@ require('lazy').setup({
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
+  },
+  --- Git signs plugin
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+
+      vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+      vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line<CR>", {})
+    end,
+
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
